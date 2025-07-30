@@ -1,25 +1,46 @@
+import { useNavigate, Link } from "react-router-dom";
 import { assets } from "../assets/assets";
 import { FaWhatsapp } from "react-icons/fa";
 
-const menuItem = ["Home", "About", "Skills", "Work", "Services", "Contact"];
+const menuItem = [
+  "About",
+  "Services",
+  "Skills",
+  "Education",
+  "Work",
+  "Team",
+  "Contact",
+];
 
 const Sidebar = () => {
+  const navigateTo = (section) => {
+    const element = document.getElementById(section);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="fixed left-0 top-0 h-full w-[100px] bg-primary border-r border-r-boxColour flex flex-col justify-between items-center py-5 text-white">
-      <div className="text-2xl font-bold">
+      <Link
+        className="text-2xl font-bold cursor-pointer"
+        to="/"
+        onClick={() => navigateTo("home")}
+      >
+        {/* Logo or Name */}
         <img src={assets.favIcon} alt="" />
-      </div>
+      </Link>
 
       {/* Menu Items */}
       <nav className="flex flex-col space-y-12 mt-10">
         {menuItem.map((item, index) => (
-          <a
+          <p
             key={index}
-            href={`#${item.toLowerCase()}`}
-            className="hover:text-gray-400 text-center py-2 transform rotate-90"
+            onClick={() => navigateTo(item.toLowerCase())}
+            className="hover:text-gray-400 text-center py-2 cursor-pointer transform rotate-90"
           >
             {item}
-          </a>
+          </p>
         ))}
       </nav>
 

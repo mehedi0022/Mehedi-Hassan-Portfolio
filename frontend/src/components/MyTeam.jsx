@@ -7,6 +7,9 @@ import nirob from "../assets/team/nirob.png";
 import { FaInstagram, FaFacebook } from "react-icons/fa";
 import { TbWorldWww } from "react-icons/tb";
 
+import { motion } from "framer-motion";
+import { fadeIn } from "../utils/varients";
+
 const ourTeam = [
   {
     _id: 1,
@@ -26,7 +29,7 @@ const ourTeam = [
     _id: 2,
     name: "Zillur Rahman",
     image: zillur,
-    position: "Sinior UI/UX Desogner",
+    position: "Senior UI/UX Designer",
     description: "Simple Demo Description",
     social: {
       facebook: "#",
@@ -39,7 +42,7 @@ const ourTeam = [
     _id: 3,
     name: "Emon Saha Joy",
     image: joy,
-    position: "Junior UI/UX Desogner",
+    position: "Junior UI/UX Designer",
     description: "Simple Demo Description",
     social: {
       facebook: "#",
@@ -78,16 +81,29 @@ const ourTeam = [
 
 const MyTeam = () => {
   return (
-    <div className="container mx-auto px-5 py-10">
-      <div className="text-center">
+    <div id="team" className="container mx-auto px-5 py-10">
+      <motion.div
+        variants={fadeIn("up", 0.2)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.5 }}
+        className="text-center"
+      >
         <p className="text-bttonColour ">Teamwork = Dream Work</p>
         <h1 className="text-4xl font-semibold">My Team</h1>
-      </div>
+      </motion.div>
 
       <div className="mt-5">
         <div className="grid grid-cols md:grid-cols-5 justify-center gap-5">
-          {ourTeam.map((member) => (
-            <div key={member._id} className="bg-boxColour rounded-md p-5">
+          {ourTeam.map((member, index) => (
+            <motion.div
+              key={member._id}
+              variants={fadeIn("up", index * 0.1)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.5 }}
+              className="bg-boxColour rounded-md p-5"
+            >
               <div className="relative group w-fit">
                 <img
                   src={member.image}
@@ -132,7 +148,7 @@ const MyTeam = () => {
                 <h2 className="text-xl font-semibold mt-2.5">{member.name}</h2>
                 <p className="text-sm">{member.position}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

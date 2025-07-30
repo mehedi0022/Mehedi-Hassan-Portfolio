@@ -6,6 +6,9 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
 
+import { motion } from "framer-motion";
+import { fadeIn } from "../utils/varients";
+
 const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -26,7 +29,7 @@ const Contact = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/contact/send",
+        "https://backed.meetmehedi.dev/api/contact/send",
         data
       );
 
@@ -48,15 +51,27 @@ const Contact = () => {
   };
 
   return (
-    <div id="about" className="container mx-auto px-5 py-10">
-      <div className="text-center">
+    <div id="contact" className="container mx-auto px-5 py-10">
+      <motion.div
+        variants={fadeIn("up", 0.2)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.5 }}
+        className="text-center"
+      >
         <p className="text-bttonColour ">Get In Touch</p>
-        <h1 className="text-4xl font-semibold">Contuct Me</h1>
-      </div>
+        <h1 className="text-4xl font-semibold">Contact Me</h1>
+      </motion.div>
 
       <div className="flex flex-col md:flex-row gap-10 mt-10 justify-center">
         <div className="basis-64 flex flex-col gap-4">
-          <div className="px-10 py-5 bg-boxColour rounded-md text-center">
+          <motion.div
+            variants={fadeIn("right", 0.3)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.5 }}
+            className="px-10 py-5 bg-boxColour rounded-md text-center"
+          >
             <MdOutlineMarkEmailUnread className="text-3xl block mx-auto mb-3" />
             <p>Email</p>
             <p className="truncate">mdmehedihassan0022@gmail.com</p>
@@ -66,8 +81,14 @@ const Contact = () => {
             >
               Write Me
             </a>
-          </div>
-          <div className="px-10 py-5 bg-boxColour rounded-md text-center">
+          </motion.div>
+          <motion.div
+            variants={fadeIn("right", 0.4)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.5 }}
+            className="px-10 py-5 bg-boxColour rounded-md text-center"
+          >
             <FaPhoneVolume className="text-3xl block mx-auto mb-3" />
             <p>Whats App</p>
             <p>+8801621905416</p>
@@ -79,8 +100,14 @@ const Contact = () => {
             >
               Write Me
             </a>
-          </div>
-          <div className="px-10 py-5 bg-boxColour rounded-md text-center">
+          </motion.div>
+          <motion.div
+            variants={fadeIn("right", 0.5)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.5 }}
+            className="px-10 py-5 bg-boxColour rounded-md text-center"
+          >
             <FaLinkedinIn className="text-3xl block mx-auto mb-3" />
             <p>Linkedin</p>
             <p>@md-mehedi-hassan0022</p>
@@ -91,10 +118,16 @@ const Contact = () => {
             >
               Follow Me
             </a>
-          </div>
+          </motion.div>
         </div>
 
-        <div className="basis-100">
+        <motion.div
+          variants={fadeIn("up", 0.4)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.5 }}
+          className="basis-100"
+        >
           <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
             {/* Full Name */}
             <div className="relative">
@@ -195,7 +228,7 @@ const Contact = () => {
               </button>
             )}
           </form>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

@@ -5,14 +5,14 @@ import "swiper/css/effect-creative";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa6";
 
 import { Autoplay } from "swiper/modules";
-import { testimoials } from "../assets/assets";
+import { testimonials } from "../assets/assets";
 
 const ClientReview = () => {
   return (
     <div className="max-w-3xl mx-auto px-5 justify-center">
       <div className="text-center mb-6">
         <p className="text-bttonColour">My Clients Say</p>
-        <h1 className="text-4xl font-semibold">Testimoials</h1>
+        <h1 className="text-4xl font-semibold">Testimonials</h1>
       </div>
       <Swiper
         loop={true}
@@ -24,7 +24,7 @@ const ClientReview = () => {
         modules={[Autoplay]}
         className="mySwiper"
       >
-        {testimoials.map((item, index) => (
+        {testimonials.map((item, index) => (
           <SwiperSlide key={index}>
             <div className="px-10 py-10 rounded-md bg-boxColour cursor-grab">
               <FaQuoteLeft className="inline mr-2" />

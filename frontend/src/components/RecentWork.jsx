@@ -45,7 +45,7 @@ const RecentWork = () => {
   }, [isPopupOpen]);
 
   return (
-    <div className="container mx-auto px-5 py-10">
+    <div id="work" className="container mx-auto px-5 py-10">
       <div className="text-center">
         <p className="text-bttonColour ">My Portfolio</p>
         <h1 className="text-4xl font-semibold">Recent Work</h1>
@@ -53,16 +53,17 @@ const RecentWork = () => {
 
       <div className="flex justify-center items-center gap-5 mt-10">
         <Swiper
-          slidesPerView={6}
+          slidesPerView={2.5}
           spaceBetween={20}
           freeMode={true}
           modules={[FreeMode]}
           className="w-full"
           breakpoints={{
-            320: { slidesPerView: 2 },
-            480: { slidesPerView: 3 },
-            768: { slidesPerView: 4 },
-            1024: { slidesPerView: 6 },
+            480: { slidesPerView: 2.5 },
+            768: { slidesPerView: 3.5 },
+            1024: { slidesPerView: 3.5 },
+            1280: { slidesPerView: 4.5 },
+            1536: { slidesPerView: 5.5 },
           }}
         >
           {uniqueCategories.map((item, index) => (
@@ -74,7 +75,7 @@ const RecentWork = () => {
                     activeCategory === item
                       ? "bg-boxColour border border-bttonColour text-white"
                       : "bg-boxColour cursor-pointer hover:bg-boxColour/60 border-0 hover:border-bttonColour text-white"
-                  } px-5 py-3 mb-1 rounded-md`}
+                  } px-3 py-2 text-xs md:text-sm md:px-5 md:py-3 mb-1 rounded-md`}
                 >
                   {item}
                 </h2>
@@ -84,7 +85,7 @@ const RecentWork = () => {
         </Swiper>
       </div>
 
-      <div className="grid grid-cols md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-5 mt-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-5 mt-10">
         <AnimatePresence mode="wait">
           {portfolio
             .filter(
@@ -97,6 +98,8 @@ const RecentWork = () => {
                 key={item._id}
                 layout
                 variants={cardVariants}
+                whileInView={"show"}
+                viewport={{ once: false, amount: 0.5 }}
                 initial="hidden"
                 animate="visible"
                 transition={{
@@ -109,23 +112,23 @@ const RecentWork = () => {
                   boxShadow: "0 8px 20px rgba(0, 0, 0, 0.1)",
                 }}
                 whileTap={{ scale: 0.98 }}
-                className="bg-boxColour px-2 py-0 md:px-5 md:py-3 rounded-md"
+                className="bg-boxColour px-3 py-2 md:px-5 md:py-3 rounded-md flex flex-col h-full"
               >
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="mt-4 rounded-md h-50 w-full object-cover"
+                  className="mt-4 rounded-md h-[200px] w-full object-cover"
                 />
                 <h2 className="text-sm md:text-[1rem] font-[500] mt-3">
                   {item.title}
                 </h2>
-                <p className="text-gray-500 text-xs md:text-[.875rem] truncate">
+                <p className="text-gray-500 text-xs md:text-[.875rem] mb-2.5 truncate">
                   {item.summary}
                 </p>
 
                 <button
                   onClick={() => handelPopup(item._id)}
-                  className="text-xs md:text-sm text-white bg-[#e20c4b] hover:bg-[#e20c4b]/60 transition-all duration-300 px-4 py-1 mt-2.5 mb-2.5 rounded cursor-pointer"
+                  className="text-xs md:text-sm text-white bg-[#e20c4b] hover:bg-[#e20c4b]/60 transition-all duration-300 px-4 py-1 mt-auto mt-2.5 mb-2.5 rounded cursor-pointer"
                 >
                   Details
                 </button>
@@ -135,21 +138,25 @@ const RecentWork = () => {
 
         {selectedItem && (
           <Popup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)}>
-            <div className="flex flex-col gap-2 md:flex-row md:gap-5 items-center justify-between">
+            <div className="flex flex-col gap-4 md:flex-row md:gap-5 items-start justify-between">
+              {/* Image section */}
               <div className="w-full md:w-[500px] mt-1.5">
                 <img
                   src={selectedItem.image}
                   alt={selectedItem.title}
-                  className="rounded-xl"
+                  className="rounded-xl w-full object-cover"
                 />
               </div>
-              <div className="flex flex-col justify-between mt-1.5">
+
+              {/* Content section */}
+              <div className="flex flex-col justify-between mt-1.5 w-full">
                 <div>
                   <p className="text-sm mb-1">{selectedItem.category}</p>
                   <h2 className="text-xl font-bold mb-4 text-white">
                     {selectedItem.title}
                   </h2>
                 </div>
+
                 <div>
                   <p className="text-gray-400 mb-2">
                     {selectedItem.description}

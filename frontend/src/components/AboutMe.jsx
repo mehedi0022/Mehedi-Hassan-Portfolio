@@ -8,7 +8,7 @@ import { fadeIn } from "../utils/varients";
 
 const AboutMe = () => {
   return (
-    <div id="about" className="container mx-auto px-5 overflow-hidden py-10">
+    <div id="about" className="container mx-auto px-5 py-10">
       <motion.div
         variants={fadeIn("up", 0.1)}
         initial="hidden"
@@ -63,7 +63,7 @@ const AboutMe = () => {
             community, and contribute to the tech industry.
           </motion.p>
 
-          <div className="flex flex-row gap-3 mt-7">
+          <div className="grid grid-cols-3 gap-2 mt-7">
             <motion.div
               variants={fadeIn("up", 0.2)}
               initial="hidden"
@@ -72,7 +72,7 @@ const AboutMe = () => {
               className="bg-boxColour px-5 md:px-10 py-2 md:py-4 rounded text-center"
             >
               <FaAward className="text-bttonColour text-2xl block mx-auto mb-1" />
-              <h3 className="text-sm md:text-lg font-semibold">Experiences</h3>
+              <h3 className="text-xs md:text-lg font-semibold">Experiences</h3>
               <p className="text-xs md:text-sm">2+ Years</p>
             </motion.div>
 
@@ -84,7 +84,7 @@ const AboutMe = () => {
               className="bg-boxColour px-5 md:px-10 py-2 md:py-4 rounded text-center"
             >
               <BiSolidBriefcase className="text-bttonColour text-2xl block mx-auto mb-1" />
-              <h3 className="text-sm md:text-lg font-semibold">Complited</h3>
+              <h3 className="text-xs md:text-lg font-semibold">Complied</h3>
               <p className="text-xs md:text-sm">60 + Projects</p>
             </motion.div>
 
@@ -96,7 +96,7 @@ const AboutMe = () => {
               className="bg-boxColour px-5 md:px-10 py-2 md:py-4 rounded text-center"
             >
               <BiSupport className="text-bttonColour text-2xl block mx-auto mb-1" />
-              <h3 className="text-sm md:text-lg font-semibold">Support</h3>
+              <h3 className="text-xs md:text-lg font-semibold">Support</h3>
               <p className="text-xs md:text-sm">Online 24/7</p>
             </motion.div>
           </div>

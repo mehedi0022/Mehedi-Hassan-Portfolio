@@ -9,66 +9,123 @@ import {
   FaYoutube,
 } from "react-icons/fa6";
 
+import { motion } from "framer-motion";
+import { fadeIn } from "../utils/varients";
+
 const Footer = () => {
   return (
     <footer className="bg-boxColour text-white">
-      <div className="container mx-auto px-4 py-10 grid gap-8 md:grid-cols-3 text-center md:text-left">
+      <div className="container mx-auto px-5 py-10 grid gap-8 md:grid-cols-3 text-center md:text-left">
         {/* Logo and copyright */}
-        <div className="flex flex-col items-center md:items-start gap-4">
+        <motion.div
+          variants={fadeIn("up", 0.2)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.5 }}
+          className="flex flex-col items-center md:items-start gap-4"
+        >
           <img src={aboutImage} className="w-36 md:w-48" alt="Mehedi | Logo" />
           <p>© Mehedi Hassan. All rights reserved {date.getFullYear()}</p>
-        </div>
+        </motion.div>
 
         {/* Important Links */}
         <div>
-          <h3 className="text-lg font-semibold mb-3">Important Links</h3>
-          <ul className="space-y-2">
+          <motion.h3
+            variants={fadeIn("up", 0.2)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.5 }}
+            className="text-lg font-semibold mb-3"
+          >
+            Important Links
+          </motion.h3>
+          <motion.ul
+            variants={fadeIn("right", 0.2)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.5 }}
+            className="space-y-2"
+          >
             <li>
-              <a href="#" className="hover:text-bttonColour transition">
-                About
+              <a
+                href="https://www.fiverr.com/s/GzQ3lV7"
+                target="_blank"
+                className="hover:text-bttonColour transition"
+              >
+                Fiverr
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-bttonColour transition">
-                Service
+              <a
+                href="https://www.freelancer.com/u/mdmehedihassan06"
+                target="_blank"
+                className="hover:text-bttonColour transition"
+              >
+                Freelancer
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-bttonColour transition">
-                Portfolio
+              <a
+                href="https://codeforces.com/profile/mehedi028"
+                target="_blank"
+                className="hover:text-bttonColour transition"
+              >
+                Codeforces
               </a>
             </li>
-          </ul>
+          </motion.ul>
         </div>
 
         {/* Subscribe & Social */}
         <div>
-          <h3 className="text-lg font-semibold mb-3">Subscribe Me</h3>
+          <motion.h3
+            variants={fadeIn("up", 0.2)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.5 }}
+            className="text-lg font-semibold mb-3"
+          >
+            Subscribe Me
+          </motion.h3>
 
           {/* Social Icons */}
-          <div className="flex justify-center md:justify-start gap-4 mb-4 flex-wrap">
+          <motion.div
+            variants={fadeIn("up", 0.2)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.5 }}
+            className="flex justify-center md:justify-start gap-4 mb-4 flex-wrap"
+          >
             <FaGithub className="hover:text-bttonColour cursor-pointer text-xl transition-transform hover:-translate-y-1" />
             <FaLinkedinIn className="hover:text-bttonColour cursor-pointer text-xl transition-transform hover:-translate-y-1" />
             <FaInstagram className="hover:text-bttonColour cursor-pointer text-xl transition-transform hover:-translate-y-1" />
             <FaFacebookF className="hover:text-bttonColour cursor-pointer text-xl transition-transform hover:-translate-y-1" />
             <FaYoutube className="hover:text-bttonColour cursor-pointer text-xl transition-transform hover:-translate-y-1" />
-          </div>
+          </motion.div>
 
           {/* Email Subscribe Form */}
-          <form className="flex flex-col sm:flex-row gap-3 items-center justify-center md:justify-start">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              required
-              className="w-full sm:w-auto flex-1 border border-bttonColour bg-transparent py-2 px-3 rounded-md outline-none text-sm"
-            />
-            <button
-              type="submit"
-              className="flex items-center gap-2 border-2 border-bttonColour bg-[#e20c4b] text-white py-2 px-4 rounded hover:opacity-90 transition"
+          <form>
+            <motion.div
+              variants={fadeIn("up", 0.3)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.5 }}
+              className="flex flex-row items-center gap-4"
             >
-              <TbSend2 />
-              Subscribe
-            </button>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                required
+                className="border border-bttonColour bg-transparent py-2 px-3 rounded-md outline-none text-sm w-full sm:w-auto"
+              />
+              <button
+                type="submit"
+                className="flex items-center text-sm gap-2 border-2 border-bttonColour bg-[#e20c4b] text-white py-2 px-4 rounded hover:opacity-90 transition w-full sm:w-auto justify-center"
+              >
+                <TbSend2 />
+                Subscribe
+              </button>
+            </motion.div>
           </form>
         </div>
       </div>

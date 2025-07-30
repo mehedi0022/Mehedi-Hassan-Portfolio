@@ -6,7 +6,7 @@ import Hero from "../components/Hero";
 import MyTeam from "../components/MyTeam";
 import RecentWork from "../components/RecentWork";
 import Services from "../components/Services";
-import Skilles from "../components/Skilles";
+import Skills from "../components/Skills";
 
 const Home = () => {
   return (
@@ -14,7 +14,7 @@ const Home = () => {
       <Hero />
       <AboutMe />
       <Services />
-      <Skilles />
+      <Skills />
       <Education />
       <RecentWork />
       <ClientReview />
