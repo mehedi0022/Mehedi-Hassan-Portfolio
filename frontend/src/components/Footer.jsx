@@ -6,8 +6,8 @@ import {
   FaInstagram,
   FaGithub,
   FaLinkedinIn,
-  FaYoutube,
 } from "react-icons/fa6";
+import { FaGooglePlay } from "react-icons/fa";
 
 import { motion } from "framer-motion";
 import { fadeIn } from "../utils/varients";
@@ -96,11 +96,45 @@ const Footer = () => {
             viewport={{ once: false, amount: 0.5 }}
             className="flex justify-center md:justify-start gap-4 mb-4 flex-wrap"
           >
-            <FaGithub className="hover:text-bttonColour cursor-pointer text-xl transition-transform hover:-translate-y-1" />
-            <FaLinkedinIn className="hover:text-bttonColour cursor-pointer text-xl transition-transform hover:-translate-y-1" />
-            <FaInstagram className="hover:text-bttonColour cursor-pointer text-xl transition-transform hover:-translate-y-1" />
-            <FaFacebookF className="hover:text-bttonColour cursor-pointer text-xl transition-transform hover:-translate-y-1" />
-            <FaYoutube className="hover:text-bttonColour cursor-pointer text-xl transition-transform hover:-translate-y-1" />
+            <FaGithub
+              onClick={() =>
+                window.open("https://github.com/mehedi0022", "_blank")
+              }
+              className="hover:text-bttonColour cursor-pointer text-xl transition-transform hover:-translate-y-1"
+            />
+            <FaLinkedinIn
+              onClick={() =>
+                window.open(
+                  "https://www.linkedin.com/in/meetmehedi-dev/",
+                  "_blank"
+                )
+              }
+              className="hover:text-bttonColour cursor-pointer text-xl transition-transform hover:-translate-y-1"
+            />
+            <FaInstagram
+              onClick={() =>
+                window.open(
+                  "https://www.instagram.com/meetmehedi.dev/",
+                  "_blank"
+                )
+              }
+              className="hover:text-bttonColour cursor-pointer text-xl transition-transform hover:-translate-y-1"
+            />
+            <FaFacebookF
+              onClick={() =>
+                window.open("https://www.facebook.com/meetmehedi.dev", "_blank")
+              }
+              className="hover:text-bttonColour cursor-pointer text-xl transition-transform hover:-translate-y-1"
+            />
+            <FaGooglePlay
+              onClick={() =>
+                window.open(
+                  "https://play.google.com/store/apps/dev?id=5362473091268240728",
+                  "_blank"
+                )
+              }
+              className="hover:text-bttonColour cursor-pointer text-xl transition-transform hover:-translate-y-1"
+            />
           </motion.div>
 
           {/* Email Subscribe Form */}

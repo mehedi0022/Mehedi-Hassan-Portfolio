@@ -3,6 +3,9 @@ import zillur from "../assets/team/zillur.png";
 import joy from "../assets/team/joy.png";
 import sojib from "../assets/team/sojib.png";
 import nirob from "../assets/team/nirob.png";
+import NazmulHaque from "../assets/team/NazmulHaque.png";
+import JubaerRafi from "../assets/team/JubaerRafi.png";
+import sabbir from "../assets/team/SabbirMiya.png";
 
 import { FaInstagram, FaFacebook } from "react-icons/fa";
 import { TbWorldWww } from "react-icons/tb";
@@ -18,10 +21,9 @@ const ourTeam = [
     position: "Team Leader",
     description: "Simple Demo Description",
     social: {
-      facebook: "#",
-      github: "#",
-      innstagram: "#",
-      website: "#",
+      facebook: "https://www.facebook.com/meetmehedi.dev",
+      instagram: "https://www.instagram.com/meetmehedi.dev/",
+      website: "http://meetmehedi.dev/",
     },
   },
 
@@ -32,9 +34,8 @@ const ourTeam = [
     position: "Senior UI/UX Designer",
     description: "Simple Demo Description",
     social: {
-      facebook: "#",
-      github: "#",
-      innstagram: "#",
+      facebook: "https://www.facebook.com/zillurhmn",
+      instagram: "https://www.instagram.com/zillurhmn",
       website: "#",
     },
   },
@@ -45,9 +46,8 @@ const ourTeam = [
     position: "Junior UI/UX Designer",
     description: "Simple Demo Description",
     social: {
-      facebook: "#",
-      github: "#",
-      innstagram: "#",
+      facebook: "https://www.facebook.com/emonsahajoy33",
+      instagram: "https://www.instagram.com/_joy_33_",
       website: "#",
     },
   },
@@ -58,9 +58,8 @@ const ourTeam = [
     position: "Frontend Developer",
     description: "Simple Demo Description",
     social: {
-      facebook: "#",
-      github: "#",
-      innstagram: "#",
+      facebook: "https://www.facebook.com/mdsajibmiah21",
+      instagram: "https://www.instagram.com/sojib_error",
       website: "#",
     },
   },
@@ -71,9 +70,48 @@ const ourTeam = [
     position: "Flutter Developer",
     description: "Simple Demo Description",
     social: {
-      facebook: "#",
+      facebook: "https://www.facebook.com/nahiyannirob109",
+      instagram: "https://www.instagram.com/nahiyan_khan_nirob",
+      website: "#",
+    },
+  },
+  {
+    _id: 6,
+    name: "Nazmul Haque",
+    image: NazmulHaque,
+    position: "SEO Specialist",
+    description:
+      "Nazmul is an expert in search engine optimization, ensuring our website ranks high on search engines.",
+    social: {
+      facebook: "https://www.facebook.com/nh.ratan.33",
       github: "#",
-      innstagram: "#",
+      instagram: "#",
+      website: "#",
+    },
+  },
+  {
+    _id: 7,
+    name: "Jubaer Rafi",
+    image: JubaerRafi,
+    position: "Digital Marketer",
+    description:
+      "Jubaer is a skilled digital marketer, specializing in social media marketing and online brand promotion.",
+    social: {
+      facebook: "https://www.facebook.com/jubaerrafii",
+      instagram: "https://www.instagram.com/jubaer.rafi/",
+      website: "#",
+    },
+  },
+  {
+    _id: 8,
+    name: "Sabbir Miya",
+    image: sabbir,
+    position: "Graphic Designer",
+    description:
+      "Sabbir is a talented graphic designer, creating visually stunning designs for our projects.",
+    social: {
+      facebook: "https://www.facebook.com/sabbir.mia.77377692",
+      instagram: "https://www.instagram.com/md_sabbir90",
       website: "#",
     },
   },
@@ -107,7 +145,7 @@ const MyTeam = () => {
               <div className="relative group w-fit">
                 <img
                   src={member.image}
-                  alt=""
+                  alt={member.name}
                   className="rounded-md cursor-pointer w-full max-w-xs sm:max-w-sm"
                 />
 
@@ -121,21 +159,21 @@ const MyTeam = () => {
                sm:opacity-0 sm:-translate-x-5 sm:group-hover:opacity-100 sm:group-hover:translate-x-0"
                 >
                   <a
-                    href={member.facebook}
+                    href={member.social.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <FaFacebook className="text-xl text-[#1877F2] hover:scale-115 cursor-pointer transition-transform duration-300" />
                   </a>
                   <a
-                    href={member.instagram}
+                    href={member.social.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <FaInstagram className="text-xl text-[#E1306C] hover:scale-115 cursor-pointer transition-transform duration-300" />
                   </a>
                   <a
-                    href={member.website}
+                    href={member.social.website}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

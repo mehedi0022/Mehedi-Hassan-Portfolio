@@ -6,8 +6,8 @@ import {
   FaEnvelope,
   FaRegUser,
   FaLinkedinIn,
-  FaYoutube,
 } from "react-icons/fa6";
+import { FaGooglePlay } from "react-icons/fa";
 import mehedi from "../assets/Mehedi.jpg";
 import { ReactTyped } from "react-typed";
 
@@ -45,11 +45,48 @@ const Hero = () => {
             >
               <p className="text-xl md:text-xl">Follow Me - </p>
               <div className="flex flex-row gap-2 md:gap-3.5 ml-2">
-                <FaGithub className="hover:text-bttonColour cursor-pointer text-xl md:text-xl hover:-translate-y-1 duration-300" />
-                <FaLinkedinIn className="hover:text-bttonColour cursor-pointer text-xl md:text-xl hover:-translate-y-1 duration-300" />
-                <FaInstagram className="hover:text-bttonColour cursor-pointer text-xl md:text-xl hover:-translate-y-1 duration-300" />
-                <FaFacebookF className="hover:text-bttonColour cursor-pointer text-xl md:text-xl hover:-translate-y-1 duration-300" />
-                <FaYoutube className="hover:text-bttonColour cursor-pointer text-xl md:text-xl hover:-translate-y-1 duration-300" />
+                <FaGithub
+                  onClick={() =>
+                    window.open("https://github.com/mehedi0022", "_blank")
+                  }
+                  className="hover:text-bttonColour cursor-pointer text-xl md:text-xl hover:-translate-y-1 duration-300"
+                />
+                <FaLinkedinIn
+                  onClick={() =>
+                    window.open(
+                      "https://www.linkedin.com/in/meetmehedi-dev/",
+                      "_blank"
+                    )
+                  }
+                  className="hover:text-bttonColour cursor-pointer text-xl md:text-xl hover:-translate-y-1 duration-300"
+                />
+                <FaInstagram
+                  onClick={() =>
+                    window.open(
+                      "https://www.instagram.com/meetmehedi.dev/",
+                      "_blank"
+                    )
+                  }
+                  className="hover:text-bttonColour cursor-pointer text-xl md:text-xl hover:-translate-y-1 duration-300"
+                />
+                <FaFacebookF
+                  onClick={() =>
+                    window.open(
+                      "https://www.facebook.com/meetmehedi.dev",
+                      "_blank"
+                    )
+                  }
+                  className="hover:text-bttonColour cursor-pointer text-xl md:text-xl hover:-translate-y-1 duration-300"
+                />
+                <FaGooglePlay
+                  onClick={() =>
+                    window.open(
+                      "https://play.google.com/store/apps/dev?id=5362473091268240728",
+                      "_blank"
+                    )
+                  }
+                  className="hover:text-bttonColour cursor-pointer text-xl md:text-xl hover:-translate-y-1 duration-300"
+                />
               </div>
             </motion.div>
           </div>

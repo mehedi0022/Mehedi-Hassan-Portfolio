@@ -1,4 +1,6 @@
 const Work = require("../models/works.model");
+const fs = require("fs");
+const path = require("path");
 
 const createWork = async (req, res) => {
   try {
@@ -14,7 +16,6 @@ const createWork = async (req, res) => {
       role,
     } = req.body;
 
-    // Validate required fields
     if (
       !title ||
       !category ||
@@ -25,13 +26,12 @@ const createWork = async (req, res) => {
       !technologies ||
       !role
     ) {
-      return res.status(400).json({ message: "All fields are required" });
+      throw new Error("All fields are required");
     }
 
     if (!req.file) {
-      return res.status(400).json({ message: "Image is required" });
+      throw new Error("Image is required");
     }
-    // Use the uploaded file's path
     const imagePath = `${req.protocol}://${req.get("host")}/uploads/${
       req.file.filename
     }`;
@@ -42,7 +42,7 @@ const createWork = async (req, res) => {
       client,
       summary,
       description,
-      image: imagePath, // Store the path of the uploaded image
+      image: imagePath,
       date,
       link,
       technologies,
@@ -57,6 +57,10 @@ const createWork = async (req, res) => {
       work: newWork,
     });
   } catch (error) {
+    console.error("❌ Error creating work:", error.message);
+    if (req.file) {
+      fs.unlinkSync(path.join(__dirname, "../uploads", req.file.filename));
+    }
     res
       .status(500)
       .json({ message: "Error creating work", error: error.message });
@@ -66,15 +70,59 @@ const createWork = async (req, res) => {
 const updateWork = async (req, res) => {
   try {
     const { id } = req.params;
-    const workData = req.body;
-    // Assuming you have a Work model to handle database operations
-    const updatedWork = await Work.findByIdAndUpdate(id, workData, {
-      new: true,
-    });
-    if (!updatedWork) {
+    const {
+      title,
+      category,
+      client,
+      summary,
+      description,
+      date,
+      link,
+      technologies,
+      role,
+    } = req.body;
+
+    const work = await Work.findById(id);
+
+    if (!work) {
       return res.status(404).json({ message: "Work not found" });
     }
-    res.status(200).json(updatedWork);
+
+    work.title = title || work.title;
+    work.category = category || work.category;
+    work.client = client || work.client;
+    work.summary = summary || work.summary;
+    work.description = description || work.description;
+    work.date = date || work.date;
+    work.link = link || work.link;
+    work.technologies = technologies || work.technologies;
+    work.role = role || work.role;
+
+    if (req.file) {
+      const oldImagePath = work.image?.split("/uploads/")[1];
+      const imagePath = `${req.protocol}://${req.get("host")}/uploads/${
+        req.file.filename
+      }`;
+      if (oldImagePath) {
+        const oldImageFullPath = path.join(
+          __dirname,
+          "../uploads",
+          oldImagePath
+        );
+        if (fs.existsSync(oldImageFullPath)) {
+          fs.unlinkSync(oldImageFullPath);
+        }
+      }
+      work.image = imagePath;
+    }
+
+    await work.save();
+
+    res.status(200).json({
+      success: true,
+      message: "Work updated successfully",
+      work,
+    });
   } catch (error) {
     res.status(500).json({ message: "Error updating work", error });
   }
@@ -82,11 +130,9 @@ const updateWork = async (req, res) => {
 
 const getAllWorks = async (req, res) => {
   try {
-    // Assuming you have a Work model to handle database operations
     const works = await Work.find();
     res.status(200).json(works);
   } catch (error) {
-    console.error("❌ Error fetching works:", error.message);
     res
       .status(500)
       .json({ message: "Error fetching works", error: error.message });
@@ -96,7 +142,6 @@ const getAllWorks = async (req, res) => {
 const getWorkById = async (req, res) => {
   try {
     const { id } = req.params;
-    // Assuming you have a Work model to handle database operations
     const work = await Work.findById(id);
     if (!work) {
       return res.status(404).json({ message: "Work not found" });
@@ -106,10 +151,10 @@ const getWorkById = async (req, res) => {
     res.status(500).json({ message: "Error fetching work", error });
   }
 };
+
 const deleteWork = async (req, res) => {
   try {
     const { id } = req.params;
-    // Assuming you have a Work model to handle database operations
     const deletedWork = await Work.findByIdAndDelete(id);
     if (!deletedWork) {
       return res.status(404).json({ message: "Work not found" });
@@ -119,7 +164,7 @@ const deleteWork = async (req, res) => {
     res.status(500).json({ message: "Error deleting work", error });
   }
 };
-// Assuming you have a Work model defined
+
 module.exports = {
   createWork,
   getAllWorks,

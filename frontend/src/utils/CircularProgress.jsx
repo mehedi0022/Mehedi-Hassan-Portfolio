@@ -1,5 +1,3 @@
-
-
 const CircularProgress = ({ progress }) => {
   const radius = 45;
   const circumference = 2 * Math.PI * radius;
@@ -30,9 +28,7 @@ const CircularProgress = ({ progress }) => {
         />
       </svg>
       <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
-        <span className="text-sm font-semibold text-blue-700">
-          {progress}
-        </span>
+        <span className="text-sm font-semibold text-blue-700">{progress}</span>
       </div>
     </div>
   );

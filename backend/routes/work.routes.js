@@ -21,7 +21,7 @@ router.get("/:id", getWorkById);
 router.post("/add", checkAuth, upload.single("image"), createWork);
 
 // Route to update a work
-router.put("/:id", checkAuth, updateWork);
+router.put("/:id", checkAuth, upload.single("image"), updateWork);
 
 // Route to delete a work
 router.delete("/:id", checkAuth, deleteWork);
