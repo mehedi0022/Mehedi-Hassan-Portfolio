@@ -29,7 +29,7 @@ const Contact = () => {
 
     try {
       const res = await axios.post(
-        "https://backed.meetmehedi.dev/api/contact/send",
+        "https://portfoliobackend-tau.vercel.app/",
         data
       );
 
