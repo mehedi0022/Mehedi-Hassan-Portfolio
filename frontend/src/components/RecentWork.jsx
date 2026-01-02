@@ -92,7 +92,8 @@ const RecentWork = () => {
               (item) =>
                 item.category === activeCategory || activeCategory === "All"
             )
-            .slice(0, 8)
+            .slice(0, 12)
+            .reverse()
             .map((item, index) => (
               <motion.div
                 key={item._id}

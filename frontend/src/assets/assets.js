@@ -47,6 +47,7 @@ import CycloneFilterTools from "./projects/CycloneFilterTools.jpg";
 import landing_page from "./projects/PoolNationLandingPage.jpg";
 import prescripto from "./projects/prescripto.webp";
 import khanapina from "./projects/khanapina.png";
+import nkmhs from "./projects/nmhs.png";
 
 // Testimonials
 
@@ -100,26 +101,30 @@ export const testimonials = [
 
 export const portfolio = [
   {
-    _id: 8,
-    category: "Company",
-    title: "Pool Nation",
-    summary: "A comprehensive platform for pool enthusiasts.",
+    _id: 1,
+    category: "Management System",
+    title: "Khanapina Mass Management System",
+    summary: "Mass Meal Management System. Calculate meal cost and more. ",
     description:
-      "A full-stack web application featuring a podcast, blog, and community forum for pool players.",
-    image: poolnation,
-    link: "https://poolnation.com",
-    client: "Edgar De Jesus",
-    date: "2022-03-06",
+      "A comprehensive system for managing mass meal distributions, including cost calculations and resource management.",
+    image: khanapina,
+    link: "https://meal-hub-ten.vercel.app/dashboard",
+    client: "Mehedi Hassan",
+    date: "2023-09-03",
     technologies: [
-      "WordPress",
-      "Elementor",
-      "PHP",
-      "MySQL",
-      "JavaScript",
-      "CSS",
-      "HTML",
+      "React Js",
+      "Node.js",
+      "Cloudinary",
+      "MongoDB",
+      "JWT",
+      "Express Js",
+      "Mongoose",
+      "Axios",
+      "Redux",
+      "React Router",
+      "Tailwind CSS",
     ],
-    role: "Full Web Site",
+    role: "Full Stack Developer",
   },
   {
     _id: 2,
@@ -228,30 +233,26 @@ export const portfolio = [
     role: "Full Stack Developer",
   },
   {
-    _id: 1,
-    category: "Management System",
-    title: "Khanapina Mass Management System",
-    summary: "Mass Meal Management System. Calculate meal cost and more. ",
+    _id: 8,
+    category: "Company",
+    title: "Pool Nation",
+    summary: "A comprehensive platform for pool enthusiasts.",
     description:
-      "A comprehensive system for managing mass meal distributions, including cost calculations and resource management.",
-    image: khanapina,
-    link: "https://meal-hub-ten.vercel.app/dashboard",
-    client: "Mehedi Hassan",
-    date: "2023-09-03",
+      "A full-stack web application featuring a podcast, blog, and community forum for pool players.",
+    image: poolnation,
+    link: "https://poolnation.com",
+    client: "Edgar De Jesus",
+    date: "2022-03-06",
     technologies: [
-      "React Js",
-      "Node.js",
-      "Cloudinary",
-      "MongoDB",
-      "JWT",
-      "Express Js",
-      "Mongoose",
-      "Axios",
-      "Redux",
-      "React Router",
-      "Tailwind CSS",
+      "WordPress",
+      "Elementor",
+      "PHP",
+      "MySQL",
+      "JavaScript",
+      "CSS",
+      "HTML",
     ],
-    role: "Full Stack Developer",
+    role: "Full Web Site",
   },
   {
     _id: 9,
@@ -266,6 +267,21 @@ export const portfolio = [
     date: "2023-08-20",
     technologies: ["React", "Tailwind CSS", "JavaScript"],
     role: "Frontend Developer",
+  },
+  {
+    _id: 10,
+    category: "Management System",
+    title: "High School Management System Frontend",
+    summary:
+      "A full-stack web application built with the MERN stack to manage student admissions...",
+    description:
+      "A full-stack web application built with the MERN stack to manage student admissions, teacher and class routines, ID card generation, results, promotions, and dynamic content control. Includes role-based admin features, secure authentication, file uploads, and a responsive dashboard for efficient school operations.",
+    image: nkmhs,
+    link: "http://nkmhs.edu.bd/",
+    client: "Nayan Khan Memorial High School",
+    date: "2025-011-12",
+    technologies: ["React", "Tailwind CSS", "JavaScript"],
+    role: "Full Stack Developer",
   },
 ];
 
