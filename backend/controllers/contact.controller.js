@@ -27,7 +27,6 @@ const sendMessage = async (req, res) => {
       message,
     };
     await sendEmail(data);
-
     res.json({
       success: true,
       message: "Message Sent Successfully!",

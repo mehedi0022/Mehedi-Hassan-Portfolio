@@ -29,8 +29,8 @@ const Contact = () => {
 
     try {
       const res = await axios.post(
-        "https://portfoliobackend-tau.vercel.app/",
-        data
+        "https://portfoliobackend-tau.vercel.app/api/contact/send-message",
+        data,
       );
 
       console.log(res);
