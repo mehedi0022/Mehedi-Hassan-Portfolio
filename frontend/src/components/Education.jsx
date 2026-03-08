@@ -30,7 +30,7 @@ const experienceData = [
   {
     company: "Pool Nation",
     role: "Web Developer",
-    year: "2021 - Present",
+    year: "Aug 2023 - April 2025",
     desc: "Leading frontend development and maintaining legacy WordPress systems.",
     current: true,
   },

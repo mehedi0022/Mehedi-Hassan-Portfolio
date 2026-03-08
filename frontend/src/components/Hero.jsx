@@ -7,7 +7,7 @@ import {
 } from "react-icons/fa6";
 import { HiDownload } from "react-icons/hi";
 import { FaPhone, FaEnvelope } from "react-icons/fa6";
-import mehedi from "../assets/Mehedi.jpg";
+import mehedi from "../assets/mehedi-hassan.png";
 import { ReactTyped } from "react-typed";
 import { motion } from "framer-motion";
 import { fadeIn } from "../utils/varients";
@@ -159,7 +159,7 @@ const Hero = () => {
                 <FaPhone /> +880 1621-905416
               </div>
               <div className="flex items-center gap-2 hover:text-[#e20c4b] transition-colors cursor-pointer">
-                <FaEnvelope /> mdmehedi@gmail.com
+                <FaEnvelope /> mdmehedihassan0022@gmail.com
               </div>
             </motion.div>
           </div>
