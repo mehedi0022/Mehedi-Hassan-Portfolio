@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "title": "Send Project Inquiry",
+    "description": "Share your project idea, required pages, timeline, and references through the contact form.",
+    "ctaLabel": "Go to Contact Form",
+    "href": "#contact",
+    "external": false
+  },
+  {
+    "id": 2,
+    "title": "Order via Fiverr",
+    "description": "Prefer a direct order flow? Use Fiverr to place your order, discuss scope, and start quickly.",
+    "ctaLabel": "Order on Fiverr",
+    "href": "https://www.fiverr.com/s/GzQ3lV7",
+    "external": true
+  }
+]

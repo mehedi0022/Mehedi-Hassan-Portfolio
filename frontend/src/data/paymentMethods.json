@@ -1,0 +1,21 @@
+{
+  "paymentTitle": "Accepted advance payment methods",
+  "paymentDescription": "For direct orders, click a payment option below to copy the details instantly.",
+  "methods": [
+    {
+      "id": "bkash",
+      "label": "bKash",
+      "copyText": "bKash: 01621905416"
+    },
+    {
+      "id": "nagad",
+      "label": "Nagad",
+      "copyText": "Nagad: 01621905416"
+    },
+    {
+      "id": "bank",
+      "label": "Bank",
+      "copyText": "Bank: City Bank\nAccount Name: MD Mehedi Hassan\nBank Name: City Bank\nAccount Number: 1781500115445\nBranch: Mirpur\nRouting Number: 225262986"
+    }
+  ]
+}

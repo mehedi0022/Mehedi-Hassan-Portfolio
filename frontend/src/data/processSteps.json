@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "step": "01",
+    "title": "Discovery Call",
+    "description": "We discuss your website goals, target audience, references, and required pages before starting.",
+    "highlight": "Project goals, style direction, and scope clarity"
+  },
+  {
+    "id": 2,
+    "step": "02",
+    "title": "Planning & Structure",
+    "description": "I organize the site sections, content flow, and conversion points so the website feels purposeful.",
+    "highlight": "Wireframe thinking, CTA placement, and user flow"
+  },
+  {
+    "id": 3,
+    "step": "03",
+    "title": "Design & Development",
+    "description": "Your website is built with responsive layouts, modern UI, and clean implementation for every screen size.",
+    "highlight": "Responsive build, polished visuals, and smooth interactions"
+  },
+  {
+    "id": 4,
+    "step": "04",
+    "title": "Review & Launch",
+    "description": "You review the work, request revisions if needed, and receive the final project ready for delivery.",
+    "highlight": "Final checks, revisions, and handoff support"
+  }
+]

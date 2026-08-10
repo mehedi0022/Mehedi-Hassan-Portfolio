@@ -1,0 +1,70 @@
+[
+  {
+    "id": 1,
+    "name": "Starter Website",
+    "tag": "Best for personal brands",
+    "price": "$80+",
+    "description": "A clean one-page website for freelancers, portfolios, and simple business presentations.",
+    "delivery": "3-5 Days Delivery",
+    "revisions": "2 Revisions",
+    "highlight": false,
+    "features": [
+      "Single responsive landing page",
+      "Modern hero and service sections",
+      "Contact section with clear CTA",
+      "Basic on-page SEO setup",
+      "Fast and mobile-friendly layout"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Business Website",
+    "tag": "Great for small companies",
+    "price": "$150+",
+    "description": "A multi-page business website designed to present services, build trust, and generate leads.",
+    "delivery": "5-7 Days Delivery",
+    "revisions": "3 Revisions",
+    "highlight": false,
+    "features": [
+      "Up to 5 responsive pages",
+      "Service, about, and contact pages",
+      "Contact form and social links",
+      "Speed optimization",
+      "SEO-friendly page structure"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Professional Website",
+    "tag": "Most popular package",
+    "price": "$250+",
+    "description": "A polished website package for growing brands that need stronger presentation and more custom sections.",
+    "delivery": "7-10 Days Delivery",
+    "revisions": "4 Revisions",
+    "highlight": true,
+    "features": [
+      "Up to 8 custom-designed pages",
+      "Portfolio, blog, or case study sections",
+      "Advanced UI sections and animations",
+      "Performance and SEO optimization",
+      "Priority support during delivery"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Custom Web Solution",
+    "tag": "For unique business goals",
+    "price": "Custom Quote",
+    "description": "A custom website solution for businesses that need booking, dashboards, advanced integrations, or special workflows.",
+    "delivery": "Custom Timeline",
+    "revisions": "Custom Scope",
+    "highlight": false,
+    "features": [
+      "Fully custom website structure",
+      "Custom sections based on your goals",
+      "API or third-party integrations",
+      "Scalable architecture planning",
+      "Project discussion before order"
+    ]
+  }
+]

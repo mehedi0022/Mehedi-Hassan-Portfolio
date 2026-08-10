@@ -6,9 +6,13 @@ import { FaWhatsapp, FaBars, FaTimes } from "react-icons/fa";
 const menuItem = [
   "About",
   "Services",
+  "Pricing",
+  "Process",
   "Skills",
   "Education",
   "Work",
+  "Inquiry",
+  "FAQ",
   "Team",
   "Contact",
 ];
@@ -17,7 +21,6 @@ const Sidebar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Handle scroll effect for mobile header
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -36,11 +39,7 @@ const Sidebar = () => {
 
   return (
     <>
-      {/* =========================================
-          DESKTOP SIDEBAR (FIXED)
-          ========================================= */}
       <aside className="hidden lg:flex fixed left-0 top-0 h-full w-[100px] bg-primary border-r border-r-boxColour flex-col justify-between items-center py-6 text-white z-50">
-        {/* Logo */}
         <Link
           className="cursor-pointer hover:scale-110 transition-transform duration-300"
           to="/"
@@ -53,14 +52,11 @@ const Sidebar = () => {
           />
         </Link>
 
-        {/* Vertical Menu - Fixed using writing-mode */}
-        <nav className="flex flex-col gap-8 mt-4">
+        <nav className="flex flex-col gap-6 mt-4">
           {menuItem.map((item, index) => (
             <button
               key={index}
               onClick={() => navigateTo(item.toLowerCase())}
-              // writing-mode: vertical-lr makes text flow top-to-bottom naturally
-              // This prevents the "broken" overlap issues of rotate-90
               className="text-gray-400 hover:text-[#e20c4b] text-sm uppercase tracking-widest font-medium cursor-pointer transition-colors duration-300 [writing-mode:vertical-lr] hover:scale-110 p-2"
             >
               {item}
@@ -68,7 +64,6 @@ const Sidebar = () => {
           ))}
         </nav>
 
-        {/* WhatsApp */}
         <div className="mb-2">
           <a
             href="https://wa.me/8801621905416"
@@ -81,9 +76,6 @@ const Sidebar = () => {
         </div>
       </aside>
 
-      {/* =========================================
-          MOBILE/TABLET HEADER
-          ========================================= */}
       <header
         className={`lg:hidden fixed top-0 left-0 w-full z-50 px-6 py-4 flex justify-between items-center transition-all duration-300 ${
           scrolled || isMobileMenuOpen
@@ -99,7 +91,6 @@ const Sidebar = () => {
           />
         </Link>
 
-        {/* Hamburger Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className="text-white text-2xl focus:outline-none"
@@ -108,9 +99,6 @@ const Sidebar = () => {
         </button>
       </header>
 
-      {/* =========================================
-          MOBILE OVERLAY MENU
-          ========================================= */}
       <div
         className={`fixed inset-0 bg-[#16161D] z-40 flex flex-col items-center justify-center transition-transform duration-300 ease-in-out lg:hidden ${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"

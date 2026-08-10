@@ -1,0 +1,33 @@
+{
+  "directOrder": {
+    "eyebrow": "Direct Order Offer",
+    "title": "Order directly and save more",
+    "description": "If you place your website order directly, you will get a 5% discount on the total project cost. To confirm the booking, 20% advance payment is required before work starts.",
+    "ctaLabel": "Discuss Direct Order",
+    "href": "https://www.fiverr.com/s/GzQ3lV7",
+    "highlights": [
+      "5% discount on direct orders",
+      "20% advance payment required",
+      "Best for ready-to-start projects"
+    ]
+  },
+  "projectTypes": [
+    "Business Website",
+    "Portfolio Website",
+    "Landing Page",
+    "Website Redesign",
+    "Custom Web Solution"
+  ],
+  "budgetRanges": [
+    "$80 - $150",
+    "$150 - $250",
+    "$250 - $500",
+    "$500+"
+  ],
+  "timelineOptions": [
+    "Need it urgently",
+    "Within 1 week",
+    "Within 2 weeks",
+    "Flexible timeline"
+  ]
+}

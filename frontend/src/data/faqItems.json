@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "question": "What do you need to start a website project?",
+    "answer": "I usually need your business details, preferred design style, page requirements, branding assets, and a few example websites you like."
+  },
+  {
+    "id": 2,
+    "question": "Will my website be fully responsive?",
+    "answer": "Yes. Every website package is built to work smoothly across desktop, tablet, and mobile devices."
+  },
+  {
+    "id": 3,
+    "question": "Can you redesign an existing website?",
+    "answer": "Yes. I can refresh your current site with a cleaner layout, better UI, and improved user experience while keeping your business goals in mind."
+  },
+  {
+    "id": 4,
+    "question": "Do you offer support after delivery?",
+    "answer": "Yes. Depending on the package and project scope, I can provide revisions and post-delivery assistance."
+  },
+  {
+    "id": 5,
+    "question": "How do I place an order?",
+    "answer": "You can contact me through the inquiry section or use the Fiverr order button on the site to start the project directly."
+  },
+  {
+    "id": 6,
+    "question": "Do you provide domain or hosting setup help?",
+    "answer": "Yes. If needed, I can guide you with domain connection, hosting setup, deployment, and basic launch support for your website."
+  },
+  {
+    "id": 7,
+    "question": "Can I request extra features after the project starts?",
+    "answer": "Yes. Extra features can be discussed during the project, and if they affect timeline or scope, I will let you know clearly before proceeding."
+  },
+  {
+    "id": 8,
+    "question": "Will I be able to update the website later?",
+    "answer": "Yes. Depending on the website type, I can build it in a way that makes future updates, content changes, and improvements easier."
+  }
+]
